@@ -2,26 +2,12 @@
 
 // var typedText = document.getElementById("input").value;
 
-function alphabetize(typedText) {
+
+
+function alphabetize(word) {
     return word.toLowerCase().split("").sort().join("").trim();
 }
-
-// adds function to the user button //
-document.getElementById("findButton").onclick = function () {
-    let typedText = document.getElementById("input").value;
-    console.log(typedText);
-    for (i = 0; i < words.length; i++) {
-        let dictionary = words[i];
-
-        if (alphabetize(typedText) === alphabetize(dictionary)) {
-
-            document.write((dictionary) + ",  ");
-
-        }
-
-    }
-}
-function getAnagrams(word) {
+function getAnagrams() {
 
     const anagrams = {};
     for (let i = 0; i < words.length; i++) {
@@ -35,16 +21,17 @@ function getAnagrams(word) {
     }
 
     return anagrams;
+}
+
+function findAnagrams(){
     const foundAnagrams = getAnagrams();
     for (let key in foundAnagrams) {
-        console.log(key);
-        console.log(foundAnagrams[key]);
         if (foundAnagrams[key].length >= 5) {
             console.log(foundAnagrams[key]);
         }
     }
 }
 
-
+findAnagrams();
 
 
